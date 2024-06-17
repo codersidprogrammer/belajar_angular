@@ -14,7 +14,13 @@ export class AppComponent implements OnInit {
     content: 'This is my first angular application project',
   };
 
+  internalMessage: string = 'This is my internal message app.component';
+
   ngOnInit(): void {
     initFlowbite();
+  }
+
+  receiveMessage($message: string): void {
+    this.internalMessage = $message;
   }
 }
