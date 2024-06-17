@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { initFlowbite } from 'flowbite';
 
 @Component({
@@ -16,11 +17,17 @@ export class AppComponent implements OnInit {
 
   internalMessage: string = 'This is my internal message app.component';
 
+  constructor(private route: Router) {}
+
   ngOnInit(): void {
     initFlowbite();
   }
 
   receiveMessage($message: string): void {
     this.internalMessage = $message;
+  }
+
+  navigateToPage(page: string): void {
+    this.route.navigate([page]);
   }
 }
