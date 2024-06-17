@@ -9,6 +9,11 @@ import { initFlowbite } from 'flowbite';
 export class AppComponent implements OnInit {
   title = 'belajar_angular';
 
+  dummyData = {
+    title: 'MyFirst Project',
+    content: 'This is my first angular application project',
+  };
+
   ngOnInit(): void {
     initFlowbite();
   }
